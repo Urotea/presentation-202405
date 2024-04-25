@@ -1,5 +1,9 @@
 ---
 marp: true
+theme: academic
+paginate: true
+math: katex
+footer: '@Urotea all rights reserved.'
 ---
 
 <style>
@@ -12,6 +16,19 @@ section {
 }
 </style>
 
-# サンプル
+<!-- _class: lead -->
 
-ここに本文が来る。
+# これはサンプル
+
+#### サンプルだよ
+
+<br>
+
+**Urotea**
+
+---
+
+<!-- _header: 目次 -->
+
+1. はじめに
+1. おわりに
