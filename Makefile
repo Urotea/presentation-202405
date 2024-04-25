@@ -24,4 +24,4 @@ release-%: export
 	$(eval VERSION := $(subst release-,,$@))
 	git tag -a $(VERSION) -m "Release $(VERSION)"
 	git push origin $(VERSION)
-	gh release create $(VERSION) dist/output.pdf dist/output.pptx dist/output.html -t $(VERSION)
+	gh release create $(VERSION) dist/output.pdf dist/output.pptx dist/output.html -t $(VERSION) --generate-notes
