@@ -88,4 +88,7 @@ export default async function Page() {
 ```
 
 useEffect、SWR、suspenseは難しすぎる。
-詳しくはこちらhttps://zenn.dev/urotea/articles/71f0afb4156a33
+実はasyncコンポーネントは内部でsuspenseを使っています。
+
+なんと詳しく書いてある記事がここに。
+https://zenn.dev/urotea/articles/71f0afb4156a33

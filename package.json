@@ -7,6 +7,7 @@
   "author": "Urotea",
   "license": "MIT",
   "devDependencies": {
+    "lefthook": "^1.6.10",
     "textlint": "^14.0.4",
     "textlint-rule-preset-ja-technical-writing": "^10.0.1",
     "textlint-rule-preset-jtf-style": "^2.3.14"
