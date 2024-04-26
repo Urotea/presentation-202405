@@ -2,7 +2,7 @@ ifneq ($(notdir $(CURDIR)),presentation-202405)
 	$(error current directory is not 'presentation-202405')
 endif
 
-FILE_NAME := test.md
+FILE_NAME := presentation.md
 
 .PHONY: generate export-html export-pdf export-pptx export release-%
 
