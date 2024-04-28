@@ -33,6 +33,7 @@ section {
 1. 自己紹介
 
 1. （宣伝）App Routerに完全移行した話
+1. はじめに
 1. RSCが最高すぎる
 1. コロケーションが最高すぎる
 1. server actionsでさらにRSCが加速する
@@ -44,7 +45,7 @@ section {
 <!-- _header: 自己紹介 -->
 
 ```js
-{
+export const selfIntroduction = {
   name: "柿森隆生",
   age: 32,
   work_for: [
@@ -60,6 +61,10 @@ section {
     },
   ],
   languages: ["java", "kotlin", "swift", "golang", "ts"],
+  sns: [
+    {name: "Twitter", id: "@Urotea"},
+    {name: "Misskey.io", id: "@use_on"},
+  ],
 }
 ```
 
@@ -75,6 +80,15 @@ https://zenn.dev/urotea/articles/3fbaa77d77b788
 
 ---
 
+<!-- _header: はじめに -->
+
+このスライドでは私がPages RouterからApp Routerに全面移行して感じた良いところを紹介します。
+Next.jsの機能に限らずRSCなどのReactの機能にも触れます。
+
+細かいTipsや実装例は省略しますが、詳しく知りたい方はsns等で連絡ください。
+
+---
+
 <!-- _header: RSCが最高すぎる -->
 
 #### asyncとawaitがそのまま使える
@@ -87,8 +101,16 @@ export default async function Page() {
 }
 ```
 
-useEffect、SWR、suspenseは難しすぎる。
-実はasyncコンポーネントは内部でsuspenseを使っています。
+データフェッチでuseEffect、SWR、suspenseを使うのは難しいです。
+asyncとawaitで書かせて欲しいとずっと思っていました。
 
-なんと詳しく書いてある記事がここに。
+asyncコンポーネントについて書いてある記事がなんとここに。
 https://zenn.dev/urotea/articles/71f0afb4156a33
+
+---
+
+<!-- _header: コロケーションが最高すぎる -->
+
+コロケーションとは、関連するものを近くに配置することです。
+
+---
