@@ -14,11 +14,12 @@ section {
   font-weight: <weight>;
   font-style: normal;
 }
+table {margin-left: auto;margin-right: auto;display:table;}
 </style>
 
 <!-- _class: lead -->
 
-# App Routerの良いところを語らせてほしい
+# App Routerの好きなところを語る
 
 #### App Routerに完全移行したら最高だった話
 
@@ -60,13 +61,27 @@ export const selfIntroduction = {
       retirement_year: 2021,
     },
   ],
-  languages: ["java", "kotlin", "swift", "golang", "ts"],
+  languages: ["java", "kotlin", "swift", "golang", "python", "ts", "k8s"],
   sns: [
     {name: "Twitter", id: "@Urotea"},
     {name: "Misskey.io", id: "@use_on"},
   ],
 }
 ```
+
+---
+
+<!-- _header: 自己紹介 -->
+
+- NSSOL時代
+  - springでjavaエンジニアとしてキャリアをスタート
+  - とあるプロジェクトでAndroidアプリ開発に携わる
+  - 同プロジェクトのiOSアプリも担当
+  - 別プロジェクトで機械学習やgolangをさらっと触れる
+- アンドパッドに転職
+  - テックリードとして全体を見つつ主にフロントエンドとインフラを担当
+
+好きなこと：開発の足回りを整えること（CI、 CD、 テスト、 ドキュメント）
 
 ---
 
@@ -91,7 +106,18 @@ Next.jsの機能に限らずRSCなどのReactの機能にも触れます。
 
 <!-- _header: RSCが最高すぎる -->
 
-#### asyncとawaitがそのまま使える
+そのコンポーネントは本当にブラウザで組み立てる必要がありますか。
+サーバーでHTMLを組み立てた方がシンプルになります。
+
+- ページ遷移も、SEOも、パフォーマンスが改善
+- ローディングも、エラー処理も、すべてが簡単に
+- レイアウトシフトも考える必要がない
+
+:sparkles:Next.jsのRSCはSPAの恩恵を受けつつ、サーバーサイドレンダリングの恩恵も受けられます。
+
+---
+
+<!-- _header: RSCが最高すぎる -->
 
 ```ts
 export default async function Page() {
@@ -101,16 +127,18 @@ export default async function Page() {
 }
 ```
 
-データフェッチでuseEffect、SWR、suspenseを使うのは難しいです。
-asyncとawaitで書かせて欲しいとずっと思っていました。
+コンポーネント内で非同期処理を書くときHooksを使いますが、難しいですよね。
 
-asyncコンポーネントについて書いてある記事がなんとここに。
-https://zenn.dev/urotea/articles/71f0afb4156a33
+:+1:RSCでは慣れ親しんだasyncとawaitがそのまま使えます。
 
 ---
 
 <!-- _header: コロケーションが最高すぎる -->
 
 コロケーションとは、関連するものを近くに配置することです。
+
+| Pages Router | App Router |
+| --- | --- |
+| ![height:400](/src/images/pagesRouterPath.png) | ![height:400](/src/images/appRouterPath.png) |
 
 ---
