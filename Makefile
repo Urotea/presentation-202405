@@ -6,17 +6,24 @@ FILE_NAME := presentation.md
 
 .PHONY: generate export-html export-pdf export-pptx export release-%
 
+prepare:
+	sudo apt-get -y install chromium/stable-security
+	npm i
+
+serve:
+	npx @marp-team/marp-cli ./ --theme src/academic.css --server
+
 generate:
-	docker run --rm -v $(PWD):/home/marp/app/ -e LANG=$(LANG) marpteam/marp-cli src/$(FILE_NAME) -o docs/index.html --theme src/academic.css
+	npx @marp-team/marp-cli src/$(FILE_NAME) -o docs/index.html --theme src/academic.css
 
 export-html:
-	docker run --rm -v $(PWD):/home/marp/app/ -e LANG=$(LANG) marpteam/marp-cli src/$(FILE_NAME) -o dist/output.html --theme src/academic.css
+	npx @marp-team/marp-cli src/$(FILE_NAME) -o dist/output.html --theme src/academic.css
 
 export-pdf:
-	docker run --rm --init -v $(PWD):/home/marp/app/ -e LANG=$(LANG) marpteam/marp-cli src/$(FILE_NAME) -o dist/output.pdf --theme src/academic.css
+	npx @marp-team/marp-cli src/$(FILE_NAME) -o dist/output.pdf --theme src/academic.css
 
 export-pptx:
-	docker run --rm --init -v $(PWD):/home/marp/app/ -e LANG=$(LANG) marpteam/marp-cli src/$(FILE_NAME) -o dist/output.pptx --theme src/academic.css
+	npx @marp-team/marp-cli src/$(FILE_NAME) -o dist/output.pptx --theme src/academic.css
 
 export: export-html export-pdf export-pptx
 

@@ -3,10 +3,6 @@
   "image": "mcr.microsoft.com/devcontainers/javascript-node:20-bookworm",
   "features": {
     "ghcr.io/guiyomh/features/vim:0": {},
-    "ghcr.io/devcontainers/features/docker-in-docker:2": {
-      "version": "latest",
-      "dockerDashComposeVersion": "none"
-    },
     "ghcr.io/devcontainers/features/github-cli:1": {
       "installDirectlyFromGitHubRelease": true,
       "version": "latest"
