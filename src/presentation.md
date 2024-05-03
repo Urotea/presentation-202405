@@ -142,3 +142,12 @@ export default async function Page() {
 | ![height:400](/src/images/pagesRouterPath.png) | ![height:400](/src/images/appRouterPath.png) |
 
 ---
+
+<!-- _header: コロケーションが最高すぎる -->
+
+#### eslintでpackage privateが実現できます
+
+typescriptのexportはプロジェクト全体に影響しますが、eslint-plugin-import-accessを使うとpackage privateが実現できます。
+https://zenn.dev/uhyo/articles/eslint-plugin-import-access
+
+![h:300 center](https://res.cloudinary.com/zenn/image/upload/s--pqktcKqv--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:eslint-plugin-import-access%25E3%2581%25A7%25E3%2581%25AF%25E3%2581%2598%25E3%2582%2581%25E3%2582%258B%25E3%2583%2587%25E3%2582%25A3%25E3%2583%25AC%25E3%2582%25AF%25E3%2583%2588%25E3%2583%25AA%25E5%258D%2598%25E4%25BD%258D%25E3%2582%25AB%25E3%2583%2597%25E3%2582%25BB%25E3%2583%25AB%25E5%258C%2596%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:uhyo%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzVjYjFlMDJlNGQuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png)
