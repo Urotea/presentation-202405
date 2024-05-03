@@ -4,6 +4,12 @@
 
 https://urotea.github.io/presentation-202405/
 
+# for developers
+
+```bash
+make prepare
+```
+
 # LISENCE
 
 プロジェクト構成やMakefileは[LISENCE](./LICENSE)に従います。  

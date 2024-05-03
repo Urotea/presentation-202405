@@ -11,19 +11,19 @@ prepare:
 	npm i
 
 serve:
-	npx @marp-team/marp-cli ./ --theme src/academic.css --server
+	npx marp ./ --theme src/academic.css --server
 
 generate:
-	npx @marp-team/marp-cli src/$(FILE_NAME) -o docs/index.html --theme src/academic.css
+	npx marp src/$(FILE_NAME) -o index.html --theme src/academic.css
 
 export-html:
-	npx @marp-team/marp-cli src/$(FILE_NAME) -o dist/output.html --theme src/academic.css
+	npx marp src/$(FILE_NAME) -o dist/output.html --theme src/academic.css
 
 export-pdf:
-	npx @marp-team/marp-cli src/$(FILE_NAME) -o dist/output.pdf --theme src/academic.css
+	npx marp  src/$(FILE_NAME) -o dist/output.pdf --theme src/academic.css
 
 export-pptx:
-	npx @marp-team/marp-cli src/$(FILE_NAME) -o dist/output.pptx --theme src/academic.css
+	npx marp src/$(FILE_NAME) -o dist/output.pptx --theme src/academic.css
 
 export: export-html export-pdf export-pptx
 
