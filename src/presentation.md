@@ -142,7 +142,7 @@ export default async function Page() {
 
 | Pages Router | App Router |
 | --- | --- |
-| ![height:400](/src/images/pagesRouterPath.png) | ![height:400](/src/images/appRouterPath.png) |
+| ![height:400](https://urotea.github.io/presentation-202405/images/pagesRouterPath.png) | ![height:400](https://urotea.github.io/presentation-202405/images/appRouterPath.png) |
 
 ---
 
@@ -197,7 +197,7 @@ formで登録成功後にリダイレクトするときも、サーバーサイ�
 :cry:App Routerは本当にキャッシュが難しい。
 https://nextjs.org/docs/app/building-your-application/caching
 
-![height:250 center](/src/images/caching-overview.avif)
+![height:250 center](https://urotea.github.io/presentation-202405/images/caching-overview.avif)
 
 :sparkles:とりあえずすべてのキャッシュをOFFにするのがおすすめです。
 Next.js v14.2からキャッシュが少し柔軟になります。

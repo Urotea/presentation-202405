@@ -19,7 +19,7 @@ pre-commit:
       glob: "src/*"
       run: |
         make generate
-        git add docs/index.html
+        git add index.html
 #     rubocop:
 #       tags: backend style
 #       glob: "*.rb"
