@@ -37,7 +37,7 @@ table {margin-left: auto;margin-right: auto;display:table;}
 1. はじめに
 1. RSCが最高すぎる
 1. コロケーションが最高すぎる
-1. server actionsでさらにRSCが加速する
+1. server actionsでさらにRSCが最高に
 1. 良いことばかりではない
 1. おわりに
 
@@ -102,6 +102,9 @@ Next.jsの機能に限らずRSCなどのReactの機能にも触れます。
 
 細かいTipsや実装例は省略しますが、詳しく知りたい方はsns等で連絡ください。
 
+- https://twitter.com/Urotea
+- https://misskey.io/@use_on
+
 ---
 
 <!-- _header: RSCが最高すぎる -->
@@ -151,3 +154,55 @@ typescriptのexportはプロジェクト全体に影響しますが、eslint-plu
 https://zenn.dev/uhyo/articles/eslint-plugin-import-access
 
 ![h:300 center](https://res.cloudinary.com/zenn/image/upload/s--pqktcKqv--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:eslint-plugin-import-access%25E3%2581%25A7%25E3%2581%25AF%25E3%2581%2598%25E3%2582%2581%25E3%2582%258B%25E3%2583%2587%25E3%2582%25A3%25E3%2583%25AC%25E3%2582%25AF%25E3%2583%2588%25E3%2583%25AA%25E5%258D%2598%25E4%25BD%258D%25E3%2582%25AB%25E3%2583%2597%25E3%2582%25BB%25E3%2583%25AB%25E5%258C%2596%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:uhyo%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzVjYjFlMDJlNGQuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png)
+
+---
+
+<!-- _header: server actionsでさらにRSCが最高に -->
+
+最近発表されたserver actionsで、RSCはさらに強化します。
+なんとクライアントサイドjs無しでformのsubmitができます。
+
+```ts
+async function createItem(formData) {
+  'use server'
+  // ...
+}
+// Server Component
+export default async function Home() {
+  return (
+    <form action={createItem}>
+      <input type="text" name="field-name" />
+      <SubmitButton />
+    </form>
+  )
+}
+```
+
+---
+
+<!-- _header: server actionsでさらにRSCが最高に -->
+
+すべてRSCに寄せなくても十分使えます。
+App Routerを使うなら、更新系リクエストはserver actionsの利用を検討してください。
+formで登録成功後にリダイレクトするときも、サーバーサイドでリダイレクトできます。
+
+また、server actionsを使うことでApp Routerのキャッシュを有効活用できます。
+
+:+1:App Routerでserver actionsを使わない手はない。
+
+---
+
+<!-- _header: 良いことばかりではない -->
+
+:cry:App Routerは本当にキャッシュが難しい。
+https://nextjs.org/docs/app/building-your-application/caching
+
+![height:250 center](/src/images/caching-overview.avif)
+
+:sparkles:とりあえずすべてのキャッシュをOFFにするのがおすすめです。
+Next.js v14.2からキャッシュが少し柔軟になります。
+https://nextjs.org/blog/next-14-2#staletimes-experimental
+
+---
+
+<!-- _header: おわりに -->
