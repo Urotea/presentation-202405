@@ -100,6 +100,7 @@ https://zenn.dev/urotea/articles/3fbaa77d77b788
 このスライドでは私がPages RouterからApp Routerに全面移行して感じた良いところを紹介します。
 Next.jsの機能に限らずRSCなどのReactの機能にも触れます。
 
+VercelではなくEKSにNext.jsサーバーをデプロイして運用しています。
 細かいTipsや実装例は省略しますが、詳しく知りたい方はsns等で連絡ください。
 
 - https://twitter.com/Urotea
@@ -206,3 +207,9 @@ https://nextjs.org/blog/next-14-2#staletimes-experimental
 ---
 
 <!-- _header: おわりに -->
+
+- 今後もRSCは使われていくと予想
+- App Routerはまだまだ進化中。導入を焦る必要はないが、移行のメリットも大きい
+- SPAの良さをそのままにサーバー側への揺り戻しフェーズに見える
+
+UXが犠牲にならないなら、私は処理をサーバーに寄せたいので大歓迎です。
