@@ -101,23 +101,26 @@ https://zenn.dev/urotea/articles/3fbaa77d77b788
 Next.jsの機能に限らずRSCなどのReactの機能にも触れます。
 
 VercelではなくEKSにNext.jsサーバーをデプロイして運用しています。
-細かいTipsや実装例は省略しますが、詳しく知りたい方はsns等で連絡ください。
+細かいTipsや実装例は省略します。
 
-- https://twitter.com/Urotea
-- https://misskey.io/@use_on
+---
+
+<!-- _class: lead -->
+
+#### 本題
 
 ---
 
 <!-- _header: RSCが最高すぎる -->
 
-そのコンポーネントは本当にブラウザで組み立てる必要がありますか。
-サーバーでHTMLを組み立てた方がシンプルになります。
+SPAはUXを高めましたが実装が非常に難しくなりました。
+サーバーでHTMLを組み立てた方が単純です。
 
 - ページ遷移も、SEOも、パフォーマンスが改善
-- ローディングも、エラー処理も、すべてが簡単に
+- ローディングも、エラー処理も、すべてが簡単
 - レイアウトシフトも考える必要がない
 
-:sparkles:Next.jsのRSCはSPAの恩恵を受けつつ、サーバーサイドレンダリングの恩恵も受けられます。
+:sparkles:RSCはSPAと、サーバーサイドレンダリングのいいとこどり。
 
 ---
 
@@ -139,7 +142,8 @@ export default async function Page() {
 
 <!-- _header: コロケーションが最高すぎる -->
 
-コロケーションとは、関連するものを近くに配置することです。
+コロケーションパターンでは関連するものを近くに配置します。
+関連するものを近くに配置することで依存関係が理解しやすくなります。
 
 | Pages Router | App Router |
 | --- | --- |
@@ -160,34 +164,10 @@ https://zenn.dev/uhyo/articles/eslint-plugin-import-access
 
 <!-- _header: server actionsでさらにRSCが最高に -->
 
-最近発表されたserver actionsで、RSCはさらに強化します。
-なんとクライアントサイドjs無しでformのsubmitができます。
+formなどで更新する場合はPOSTリクエストを送信することが一般的です。
+私が本来やりたいのはブラウザからサーバーのコードを実行すること。
 
-```ts
-async function createItem(formData) {
-  'use server'
-  // ...
-}
-// Server Component
-export default async function Home() {
-  return (
-    <form action={createItem}>
-      <input type="text" name="field-name" />
-      <SubmitButton />
-    </form>
-  )
-}
-```
-
----
-
-<!-- _header: server actionsでさらにRSCが最高に -->
-
-すべてRSCに寄せなくても十分使えます。
-App Routerを使うなら、更新系リクエストはserver actionsの利用を検討してください。
-formで登録成功後にリダイレクトするときも、サーバーサイドでリダイレクトできます。
-
-また、server actionsを使うことでApp Routerのキャッシュを有効活用できます。
+server actionsはそれを安全にワンストップで実現できます。
 
 :+1:App Routerでserver actionsを使わない手はない。
 
@@ -208,8 +188,9 @@ https://nextjs.org/blog/next-14-2#staletimes-experimental
 
 <!-- _header: おわりに -->
 
-- 今後もRSCは使われていくと予想
+- Next.jsはApp Routerで初速を出せるフレームワークになった
 - App Routerはまだまだ進化中。導入を焦る必要はないが、移行のメリットも大きい
 - SPAの良さをそのままにサーバー側への揺り戻しフェーズに見える
 
 UXが犠牲にならないなら、私は処理をサーバーに寄せたいので大歓迎です。
+😄ぜひApp Routerを使って私と良し悪しを語り合いましょう。

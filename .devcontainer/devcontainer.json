@@ -26,7 +26,8 @@
         "taichi.vscode-textlint",
         "GitHub.copilot-chat",
         "GitHub.vscode-github-actions",
-        "marp-team.marp-vscode"
+        "marp-team.marp-vscode",
+        "bierner.emojisense"
       ]
     }
   },
